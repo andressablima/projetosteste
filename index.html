@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Sentimento</title>
+    <link rel="stylesheet" href="./styles/font-awesome.min.css">
     <link rel="stylesheet" href="./style/index.css">
 </head>
 <body>
@@ -14,7 +18,7 @@
             <p id="description">
                 Fale sobre você
             </p> 
-            <form>
+            <form action="/sobre-voce">
                 <div class="form-rows">
                     <div class="labels">
                         <label for="name" id="name-label">
@@ -22,7 +26,12 @@
                         </label>
                     </div>
                     <div class="fields">
-                        <input type="text" id="name" class="input-fields" placeholder="Digite seu nome" required>
+                        <input 
+                        type="text" 
+                        id="name" 
+                        class="input-fields" 
+                        placeholder="Digite seu nome"
+                        required>
                     </div>
                 </div>
                 <div class="form-rows">
@@ -32,14 +41,122 @@
                         </label>
                     </div>
                     <div class="fields">
-                        <input type="email" id="email" class="">
+                        <input type="email" id="email" class="input-fields" placeholder="Digite seu email" required>
                     </div>
                 </div>
                 <div class="form-rows">
                     <div class="labels">
-                        
+                        <label for="number" id="number-label">
+                            Em uma escala de 1-10, como você está hoje?
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <input type="number" id="number" class="input-fields" placeholder="Entre com um número de 1 a 10" min="1" max="10">
                     </div>
                 </div>
+                <div class="form-rows">
+                    <div class="labels">
+                        <label for="dropdown" id="dropdown-label">
+                            E onde que isso aconteceu?
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <select name="location-of-positive-event" id="dropdown" class="dropdown">
+                            <option value="home">
+                                Na minha casa
+                            </option>
+                            <option value="commute">
+                                No meu computador
+                            </option>
+                            <option value="work">
+                                No meu trabalho
+                            </option>
+                            <option value="outside">
+                                Na rua
+                            </option>
+                            <option value="other">
+                                Outros
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-rows">
+                    <div class="labels">
+                        <label for="time-of-day">
+                            Em qual momento do dia?
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <ul id="time-of-day" style="list-style:none;">
+                          <li class="radio">
+                            <label>
+                                Manhã
+                                <input name="time-radio" type="radio" value="1" class="user-selection">
+                            </label>
+                          </li>
+                          <li class="radio">
+                            <label>
+                                Tarde
+                                <input name="time-radio" type="radio" value="2" class="user-selection">
+                            </label>
+                          </li>
+                          <li class="radio">
+                            <label>
+                                Noite
+                                <input name="time-radio" type="radio" value="3" class="user-selection">
+                            </label>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-rows">
+                    <div class="labels">
+                        <label for="feelings">
+                            Quais emoções você teve?
+                            <br>
+                            (Selecione todas que se aplicam)
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <ul id="feelings" style="list-style: none;">
+                          <li class="radio">
+                            <label>
+                                <input name="feeling-check" value="1" type="checkbox" class="user-selection">
+                                Animado
+                            </label>
+                          </li>
+                          <li class="radio">
+                            <label>
+                                <input name="feeling-check" value="2" type="checkbox" class="user-selection">
+                                Exaltado
+                            </label>
+                          </li>
+                          <li class="radio">
+                            <label>
+                                <input name="feeling-check" value="3" type="checkbox" class="user-selection">
+                                Amor
+                            </label>
+                          </li>
+                          <li class="radio">
+                            <label>
+                                <input name="feeling-check" value="4" type="checkbox" class="user-selection">
+                                Entusiasmo
+                            </label>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-rows">
+                    <div class="labels">
+                        <label for="event-details">
+                            Conte mais sobre suas experiências positivas.
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <textarea id="event-details" class="input-fields" style="height: 50px;resize:vertical;font-family: Poppins;" name="event=details" cols="40" rows="20" placeholder="Coloque aqui suas experiências"></textarea>    
+                    </div>
+                </div>
+                <button class="button" id="submit" type="submit">Enviar</button>
             </form>
         </div>
     </main>
